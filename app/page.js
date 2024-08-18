@@ -3,6 +3,7 @@ import { getProducts } from "@/lib/services";
 
 
 export default async function Page () {
+  return <div>API URL not found</div>
   if(!process.env.NEXT_PUBLIC_API_URL){
     return <div>API URL not found</div>
   }
