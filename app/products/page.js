@@ -3,6 +3,9 @@ import { getProducts } from "@/lib/services";
 
 
 export default async function Page () {
+  if(!process.env.NEXT_PUBLIC_API_URL){
+    return <div>API URL not found</div>
+  }
   const products= await getProducts();
 
   return(

@@ -5,6 +5,9 @@ import { useCart } from "@/contexts/cartContext";
 import { useEffect, useState } from "react";
 
 const CartPage = () => {
+  if(!process.env.NEXT_PUBLIC_API_URL){
+    return <div>API URL not found</div>
+  }
   const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity,loading } = useCart();
 
 
