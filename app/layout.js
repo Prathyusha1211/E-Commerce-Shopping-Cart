@@ -14,6 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/PngItem_31648.png" />
+      </head>
       <body className={inter.className}>
         <CartProvider>
           <Navbar />

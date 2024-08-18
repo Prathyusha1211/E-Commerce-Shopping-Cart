@@ -2,6 +2,7 @@
 import { useCart } from "@/contexts/cartContext";
 import Link from "next/link";
 import { FaShoppingCart, FaSearch } from "react-icons/fa";
+import Logo from "../public/PngItem_31648.png";
 
 const Navbar = () => {
   const { getCartCount } = useCart();
@@ -11,7 +12,8 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-2xl font-bold">
-          <a href="/">MyShop</a>
+          <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="logo" className="w-auto h-8 inline-block" />
+          <img src="https://seeklogo.com/images/F/flipkart-logo-3F33927DAA-seeklogo.com.png" alt="logo" className="w-5 h-5 inline-block" />
         </div>
 
         {/* Search Bar */}
@@ -34,17 +36,17 @@ const Navbar = () => {
             Products
         
           </Link>
-          <a href="#" className="hover:underline">
-            Categories
-          </a>
-         <Link href="/cart" className="flex justify-center items-center">
+      
+         <Link href="/cart" className="relative flex justify-center items-center">
             Cart
-            <FaShoppingCart className="ml-2 relative" />
-            {getCartCount() > 0 && <span className="bg-red-500 text-white py-1 px-2  rounded-full ml-2 absolute top-2 end-40 text-xs">{getCartCount()}</span>}
+            <FaShoppingCart className="text-xl md:text-2xl" /> {/* Adjust icon size for responsiveness */}
+              {getCartCount() > 0 && (
+                <span className="absolute -top-5 -right-4 flex items-center justify-center w-5 h-5 bg-red-500 text-white text-xs md:text-sm font-bold rounded-full -translate-x-1/2 translate-y-1/2">
+                  {getCartCount()}
+                </span>
+      )}
+
           </Link>
-          <a href="#" className="hover:underline ">
-            Account
-          </a>
         </div>
       </div>
     </nav>
