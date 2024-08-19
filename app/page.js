@@ -1,3 +1,4 @@
+"use client";
 import ProductCard from "@/components/product_card";
 import { getProducts } from "@/lib/services";
 import { useEffect, useState } from "react";
