@@ -1,0 +1,4 @@
+fileignoreconfig:
+  - filename: app/cart/page.js
+    checksum: ed0b06573c1a45fe092ddcf3839ba533a2493f6e663b97e47600228c2832ae3e
+version: ""

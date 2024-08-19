@@ -1,8 +1,6 @@
-
 // import sqlite3 from "sqlite3";
 // import { open } from "sqlite";
- import products from "../../_data/products.json";
-
+import products from "../../_data/products.json";
 
 // export async function openDB() {
 //   return open({
@@ -30,7 +28,6 @@
 
 // }
 
-
 // export async function POST(req) {
 // //   const { name, price, imageUrl, description } = await req.json();
 //   const db = await openDB();
@@ -48,9 +45,7 @@
 //     statusText: "OK",
 //   });
 // }
-import {db} from "@vercel/postgres"
-
-
+import { db } from "@vercel/postgres";
 
 async function createTable() {
   db.sql`CREATE TABLE IF NOT EXISTS Products (id  BIGSERIAL PRIMARY KEY  , name TEXT, price DOUBLE PRECISION, imageUrl TEXT, description TEXT)`;
@@ -60,19 +55,26 @@ export async function GET() {
   await createTable();
 
   const products = await db.sql`SELECT * FROM Products`;
-  const serailizedData= products.rows.map((product)=>{return {id:product.id,name:product.name,price:product.price,imageUrl:product.imageUrl,description:product.description}})
+  const serailizedData = products.rows.map((product) => {
+    return {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      imageUrl: product.imageurl,
+      description: product.description,
+    };
+  });
   return new Response(JSON.stringify(serailizedData), {
     status: 200,
     statusText: "OK",
   });
 }
 export async function POST(request) {
- 
   const data = await request.json();
   const { name, price, imageUrl, description } = data;
 
   products.forEach(async (product) => {
-    await db.sql`INSERT INTO Products (name, price, imageUrl, description) VALUES (${product.name}, ${product.price}, ${product.image_url}, ${product.description})`;
+    await db.sql`INSERT INTO Products (name, price, imageurl, description) VALUES (${product.name}, ${product.price}, ${product.image_url}, ${product.description})`;
   });
 
   return new Response(products, {

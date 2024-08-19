@@ -1,19 +1,19 @@
 import ProductCard from "@/components/product_card";
 import { getProducts } from "@/lib/services";
 
-
-export default async function Page () {
-  return <div>API URL not found</div>
-  if(!process.env.NEXT_PUBLIC_API_URL){
-    return <div>API URL not found</div>
+export default async function Page() {
+  // return <div>API URL not found</div>
+  if (!process.env.NEXT_PUBLIC_API_URL) {
+    return <div>API URL not found</div>;
   }
 
-  const products= await getProducts();
+  const products = await getProducts();
 
-  return(
+  return (
     <div>
       <div className="bg-slate-100 container mx-auto p-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {console.log(products)}
           {products.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}
@@ -22,8 +22,3 @@ export default async function Page () {
     </div>
   );
 }
-
-
-
-
-

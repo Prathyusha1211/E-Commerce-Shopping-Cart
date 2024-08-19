@@ -5,17 +5,22 @@ import { useCart } from "@/contexts/cartContext";
 import { useEffect, useState } from "react";
 
 const CartPage = () => {
-
-  if(!process.env.NEXT_PUBLIC_API_URL){
-    return <div>API URL not found</div>
+  if (!process.env.NEXT_PUBLIC_API_URL) {
+    return <div>API URL not found</div>;
   }
-  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity,loading } = useCart();
+  const {
+    cartItems,
+    removeFromCart,
+    increaseQuantity,
+    decreaseQuantity,
+    loading,
+  } = useCart();
 
-
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const subtotal = 0;
+  // cartItems.reduce(
+  //   (sum, item) => sum + item.price * item.quantity,
+  //   0
+  // );
 
   const discount = 5; // Example discount
   const total = subtotal - discount;
@@ -28,9 +33,13 @@ const CartPage = () => {
         <div className="text-center py-10">
           <div className="loader">Loading...</div> {/* Loading indicator */}
         </div>
-      ) :cartItems.length === 0 ? (
+      ) : cartItems.length === 0 ? (
         <div className="text-center py-10">
-          <img src="https://media.istockphoto.com/id/861576608/vector/empty-shopping-bag-icon-online-business-vector-icon-template.jpg?s=612x612&w=0&k=20&c=I7MbHHcjhRH4Dy0NVpf4ZN4gn8FVDnwn99YdRW2x5k0=" alt="Empty Cart" className="w-1/4 h-1/4 mx-auto" />
+          <img
+            src="https://media.istockphoto.com/id/861576608/vector/empty-shopping-bag-icon-online-business-vector-icon-template.jpg?s=612x612&w=0&k=20&c=I7MbHHcjhRH4Dy0NVpf4ZN4gn8FVDnwn99YdRW2x5k0="
+            alt="Empty Cart"
+            className="w-1/4 h-1/4 mx-auto"
+          />
           <p className="text-l font-semibold">Your cart is empty</p>
         </div>
       ) : (
@@ -68,4 +77,3 @@ const CartPage = () => {
 };
 
 export default CartPage;
-
