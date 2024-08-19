@@ -2,25 +2,17 @@
 
 import CartItem from "@/components/CartItem";
 import { useCart } from "@/contexts/cartContext";
-import { useEffect, useState } from "react";
 
 const CartPage = () => {
-  if (!process.env.API_URL) {
+  if (!process.env.NEXT_PUBLIC_API_URL) {
     return <div>API URL not found</div>;
   }
-  const {
-    cartItems,
-    removeFromCart,
-    increaseQuantity,
-    decreaseQuantity,
-    loading,
-  } = useCart();
+  const { cartItems, loading } = useCart();
 
-  const subtotal = 0;
-  // cartItems.reduce(
-  //   (sum, item) => sum + item.price * item.quantity,
-  //   0
-  // );
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   const discount = 5; // Example discount
   const total = subtotal - discount;

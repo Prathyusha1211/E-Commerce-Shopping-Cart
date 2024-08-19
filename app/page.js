@@ -3,9 +3,9 @@ import ProductCard from "@/components/product_card";
 import { getProducts } from "@/lib/services";
 import { useEffect, useState } from "react";
 
-export default async function Page() {
+export default function Page() {
   // return <div>API URL not found</div>
-  if (!process.env.API_URL) {
+  if (!process.env.NEXT_PUBLIC_API_URL) {
     return <div>API URL not found</div>;
   }
 
