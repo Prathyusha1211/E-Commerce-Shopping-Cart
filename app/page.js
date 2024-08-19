@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default async function Page() {
   // return <div>API URL not found</div>
-  if (!process.env.NEXT_PUBLIC_API_URL) {
+  if (!process.env.API_URL) {
     return <div>API URL not found</div>;
   }
 
