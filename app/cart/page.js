@@ -4,9 +4,6 @@ import CartItem from "@/components/CartItem";
 import { useCart } from "@/contexts/cartContext";
 
 const CartPage = () => {
-  if (!process.env.NEXT_PUBLIC_API_URL) {
-    return <div>API URL not found</div>;
-  }
   const { cartItems, loading } = useCart();
 
   const subtotal = cartItems.reduce(
@@ -14,7 +11,7 @@ const CartPage = () => {
     0
   );
 
-  const discount = 5; // Example discount
+  const discount = 5; //  discount
   const total = subtotal - discount;
 
   return (

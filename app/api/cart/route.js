@@ -2,7 +2,7 @@ import { db } from "@vercel/postgres";
 
 export async function GET() {
   const cart =
-    await db.sql`SELECT CART.id,products.name,products.imageurl,CART.productId,CART.quantity,products.price FROM CART  JOIN Products ON CART.productId = Products.id`;
+    await db.sql`SELECT CART.id,products.name,products.imageurl,CART.productId,CART.quantity,products.price FROM CART  JOIN Products ON CART.productId = Products.id ORDER BY CART.id`;
   const serailizedData = cart.rows.map((product) => {
     return {
       id: product.id,

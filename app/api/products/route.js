@@ -1,6 +1,6 @@
 // import sqlite3 from "sqlite3";
 // import { open } from "sqlite";
-import products from "../../_data/products.json";
+// import products from "../../_data/products.json";
 
 // export async function openDB() {
 //   return open({
@@ -69,16 +69,16 @@ export async function GET() {
     statusText: "OK",
   });
 }
-export async function POST(request) {
-  const data = await request.json();
-  const { name, price, imageUrl, description } = data;
+// export async function POST(request) {
+//   const data = await request.json();
+//   const { name, price, imageUrl, description } = data;
 
-  products.forEach(async (product) => {
-    await db.sql`INSERT INTO Products (name, price, imageurl, description) VALUES (${product.name}, ${product.price}, ${product.image_url}, ${product.description})`;
-  });
+//   products.forEach(async (product) => {
+//     await db.sql`INSERT INTO Products (name, price, imageurl, description) VALUES (${product.name}, ${product.price}, ${product.image_url}, ${product.description})`;
+//   });
 
-  return new Response(products, {
-    status: 201,
-    statusText: "Created",
-  });
-}
+//   return new Response(products, {
+//     status: 201,
+//     statusText: "Created",
+//   });
+// }
