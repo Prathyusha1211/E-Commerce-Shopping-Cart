@@ -6,4 +6,6 @@ fileignoreconfig:
     checksum: 6f5e9722ae7cd75fdbcb55d4f23ede6c4f1b8c47ae11b7ee0f8009b46b4e2480
   - filename: next.config.mjs
     checksum: 606b9b665a743aecfd7e33607b49adced9a07a4f1324aa46211be3613524d0d0
+  - filename: next.config.js
+    checksum: 2dda644c6edad78eaa956c35b5e76f50015be270e16573fc3826d7177ee36b46
 version: ""
