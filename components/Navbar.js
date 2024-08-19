@@ -2,7 +2,6 @@
 import { useCart } from "@/contexts/cartContext";
 import Link from "next/link";
 import { FaShoppingCart, FaSearch } from "react-icons/fa";
-import Logo from "../public/PngItem_31648.png";
 
 const Navbar = () => {
   const { getCartCount } = useCart();
@@ -10,7 +9,7 @@ const Navbar = () => {
     <nav className="bg-blue-600 px-6 py-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="text-white text-2xl font-bold">
+        <div className="text-white text-2xl font-bold flex justify-center gap-1">
           <img
             src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
             alt="logo"
@@ -19,7 +18,7 @@ const Navbar = () => {
           <img
             src="https://seeklogo.com/images/F/flipkart-logo-3F33927DAA-seeklogo.com.png"
             alt="logo"
-            className="w-5 h-5 inline-block"
+            className="w-auto h-6 inline-block"
           />
         </div>
 

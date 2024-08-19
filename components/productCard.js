@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
-  const { addToCart, cartItems } = useCart();
+  const { addToCart } = useCart();
   const [bounce, setBounce] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
