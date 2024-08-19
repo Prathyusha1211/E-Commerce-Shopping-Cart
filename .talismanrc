@@ -4,10 +4,8 @@ fileignoreconfig:
     fileignoreconfig:
   - filename: app/page.js
     checksum: 6f5e9722ae7cd75fdbcb55d4f23ede6c4f1b8c47ae11b7ee0f8009b46b4e2480
-  - filename: next.config.mjs
-    checksum: fb7cc97e841dda91924a7ea95598ebb5e728d2ce120ccbf8255618e8714008ea
-  - filename: next.config.js
-    checksum: 2dda644c6edad78eaa956c35b5e76f50015be270e16573fc3826d7177ee36b46
   - filename: vercel.json
     checksum: 2446d7bd92b7053bb802835dd1ad37804723e4da61db7e9ca8d5cd2d004f182e
+  - filename: next.config.mjs
+    checksum: 798a8d8306d9153ea52dedd330cad94c687ed579dc1a8f03106419be563b236b
 version: ""
