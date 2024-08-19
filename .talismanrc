@@ -8,4 +8,6 @@ fileignoreconfig:
     checksum: 606b9b665a743aecfd7e33607b49adced9a07a4f1324aa46211be3613524d0d0
   - filename: next.config.js
     checksum: 2dda644c6edad78eaa956c35b5e76f50015be270e16573fc3826d7177ee36b46
+  - filename: vercel.json
+    checksum: 2446d7bd92b7053bb802835dd1ad37804723e4da61db7e9ca8d5cd2d004f182e
 version: ""
