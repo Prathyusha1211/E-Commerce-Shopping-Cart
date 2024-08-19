@@ -2,10 +2,10 @@ fileignoreconfig:
   - filename: app/cart/page.js
     checksum: ed0b06573c1a45fe092ddcf3839ba533a2493f6e663b97e47600228c2832ae3e
     fileignoreconfig:
-  - filename: app/page.js
-    checksum: 6f5e9722ae7cd75fdbcb55d4f23ede6c4f1b8c47ae11b7ee0f8009b46b4e2480
   - filename: vercel.json
     checksum: 2446d7bd92b7053bb802835dd1ad37804723e4da61db7e9ca8d5cd2d004f182e
   - filename: next.config.mjs
     checksum: 798a8d8306d9153ea52dedd330cad94c687ed579dc1a8f03106419be563b236b
+  - filename: app/page.js
+    checksum: b3731fc9f03ea1a1078bfc64a4d15902967c658d73ca0af2bee5cca258e698c1
 version: ""

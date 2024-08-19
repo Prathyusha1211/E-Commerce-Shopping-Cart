@@ -4,11 +4,6 @@ import { getProducts } from "@/lib/services";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  // return <div>API URL not found</div>
-  if (!process.env.NEXT_PUBLIC_API_URL) {
-    return <div>API URL not found</div>;
-  }
-
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -31,10 +26,12 @@ export default function Page() {
           <div className="loader">Loading...</div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="container mx-auto p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-screen-2xl gap-4  mt-10">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       )}
     </div>
